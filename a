@@ -1,0 +1,11 @@
+[33m7da8899[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: checkout: moving from 8742e7fca5a15c371d0f55018d7ded4d80fd1a10 to master
+[33m8742e7f[m HEAD@{1}: commit: container div , button , inputs fixed
+[33m6d8eaff[m HEAD@{2}: commit: adjusted logo
+[33m94a83c8[m HEAD@{3}: checkout: moving from master to 94a83c8
+[33m7da8899[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: commit: Revert "edits in UI"
+[33me338558[m HEAD@{5}: commit: changes
+[33m67332ba[m HEAD@{6}: commit: some edit in width
+[33m94a83c8[m HEAD@{7}: commit: edits in UI
+[33me49d04c[m HEAD@{8}: commit: layout changed
+[33m0dd3aae[m HEAD@{9}: commit: tailwind fixed
+[33me6d8549[m HEAD@{10}: commit (initial): Initial commit from Create Next App
