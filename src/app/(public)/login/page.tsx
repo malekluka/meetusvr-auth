@@ -1,10 +1,9 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, LoginValues } from '@/lib/validators'
-import { Input } from '@/components/ui/Input'
-import { Button } from '@/components/ui/Button'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAuth } from '@/store/auth'
 
@@ -35,37 +34,113 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-sm space-y-4 p-6 rounded-lg shadow bg-white"
-      >
-        <h1 className="text-xl font-bold">Login</h1>
+    <div className="min-h-screen flex bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
+      {/* Left Side - Form */}
+      <div className="flex-1 flex items-center justify-center bg-white bg-opacity-70">
+        <div className="w-full max-w-sm px-8">
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-5xl text-gray-900 mb-4 leading-tight">
+              Welcome back
+            </h1>
+            <p className="text-gray-600 text-base leading-relaxed">
+              Step into our shopping metaverse for an<br />
+              unforgettable shopping experience
+            </p>
+          </div>
 
-        {apiError && <p className="text-red-500">{apiError}</p>}
+          {/* Form */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {apiError && (
+              <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 text-sm">{apiError}</p>
+              </div>
+            )}
 
-        <Input
-          label="Email"
-          type="email"
-          {...register('email')}
-          error={errors.email?.message}
-        />
+            {/* Email Input */}
+            <div className="space-y-2">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <input
+                  {...register('email')}
+                  type="email"
+                  placeholder="Email"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+              {errors.email && (
+                <p className="text-red-500 text-sm ml-1">{errors.email.message}</p>
+              )}
+            </div>
 
-                <Input
-                    label="Password"
-                    type="password"
-                    {...register('password')}
-                  error={errors.password?.message}
-              />
-              <Button
-                  type="submit"
-                  loading={isSubmitting}
-                  disabled={!isValid}
-                  fullWidth
-              >
-                  Login
-              </Button>
-            </form>
-        </main>
-    )
+            {/* Password Input */}
+            <div className="space-y-2">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <input
+                  {...register('password')}
+                  type="password"
+                  placeholder="Password"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+              {errors.password && (
+                <p className="text-red-500 text-sm ml-1">{errors.password.message}</p>
+              )}
+            </div>
+
+            {/* Login Button */}
+            <button
+              type="submit"
+              disabled={!isValid || isSubmitting}
+              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium py-4 px-6 rounded-lg hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V8l-2.5-1.5L11 5a6 6 0 00-6 6h1z"></path>
+                  </svg>
+                  Signing in...
+                </div>
+              ) : (
+                'Login'
+              )}
+            </button>
+
+            {/* Sign up link */}
+            <p className="text-center text-gray-600 mt-6">
+              Don&apos;t have an account?{' '}
+              <button type="button" className="text-gray-700 hover:text-gray-900 font-medium">
+                Sign up
+              </button>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      {/* Right Side - Logo and Branding */}
+      <div className="flex-1 flex flex-col items-center justify-center p-8 relative">
+        
+        {/* Logo Image - positioned over the spiral */}
+        <div className="relative w-[400px] h-[100px] z-10">
+          <Image
+            src="/meetus-logo.png"
+            alt="MeetusVR Logo"
+            fill
+            priority
+            className="object-contain drop-shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  )
 }
