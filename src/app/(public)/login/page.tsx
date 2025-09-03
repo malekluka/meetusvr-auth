@@ -36,21 +36,20 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
       {/* Full-page decorative background (covers all over) */}        {/* Large spiral placed to the right but contained inside the full height */}
-        <div className="absolute inset-y-0 right-0 w-[65%] flex items-center justify-end">
-        </div>
+      
 
         {/* Soft gradient blobs behind the spiral */}
         <div className="absolute -right-40 -top-40 w-[520px] h-[520px] bg-gradient-to-tr from-pink-400 via-purple-500 to-blue-400 opacity-40 rounded-full blur-3xl transform rotate-12" />
 
       {/* Left Side - Form (above the decorative background) */}
-      <div className="w-full flex items-center justify-center bg-white bg-opacity-70 z-10">
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white bg-opacity-70 z-10">
         <div className="w-full max-w-sm px-8">
           {/* Header */}
           <div className="mb-12">
             <h1 className="text-5xl text-gray-900 mb-4 leading-tight">
               Welcome back
             </h1>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-base text-center leading-relaxed">
               Step into our shopping metaverse for an<br />
               unforgettable shopping experience
             </p>
@@ -135,19 +134,32 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side - Logo area (keeps content above background) */}
-      <div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
-        <div className="relative z-20">
-          <div className="relative w-64 h-20 mx-auto">
-            <Image
-              src="/meetusAR-logo.png"
-              alt="MeetusVR Logo"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
-        </div>
-      </div>
+<div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
+  <div className="relative z-20 flex flex-col items-center">
+    {/* Logo */}
+    <div className="relative w-[660px] h-[350px]">
+      <Image
+        src="/meetusAR-logo.png"
+        alt="MeetusVR Logo"
+        fill
+        priority
+        className="object-contain"
+      />
+    </div>
+
+    {/* Text (closer to logo) */}
+    <div className="relative w-64 h-20 -mt-2">
+      <Image
+        src="/meetusAR-text.png"
+        alt="MeetusVR Text"
+        fill
+        priority
+        className="object-contain"
+      />
+    </div>
+  </div>
+</div>
+
     </div>
   )
 }
