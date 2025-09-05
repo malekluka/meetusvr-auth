@@ -122,17 +122,16 @@ export default function LoginPage() {
 
       {/* Left Side - Form (above the decorative background) */}
       <div className="w-full lg:w-1/2 flex items-center justify-center z-10">
-        <div className="w-full max-w-md px-8">
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-5xl text-gray-900 mb-4 text-center leading-tight">
-              Welcome back
-            </h1>
-            <p className="text-gray-600 text-base text-center leading-relaxed">
-              Step into our shopping metaverse for an<br />
-              unforgettable shopping experience
-            </p>
-          </div>
+  <div className="w-full max-w-md px-8">
+    {/* Header */}
+    <div className="mb-12">
+      <h1 className="font-[ABeeZee] font-normal text-[56px] leading-[100%] text-center text-gray-900 mb-6">
+        Welcome back
+      </h1>
+      <p className="font-[ABeeZee] font-normal text-[18px] leading-[155%] text-center text-[#62626B]">
+        Step into our shopping metaverse for an unforgettable shopping experience
+      </p>
+    </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -201,13 +200,15 @@ export default function LoginPage() {
               )}
             </button>
 
-            {/* Sign up link */}
-            <p className="text-center text-gray-600 mt-6">
-              Don&apos;t have an account?{' '}
-              <button type="button" className="text-gray-700 hover:text-gray-900 font-medium">
-                Sign up
-              </button>
-            </p>
+            {/* Sign up */}
+            <p className="mt-6 m-0 text-center text-[#62626B] font-normal text-[14px] leading-[155%] font-[ABeeZee]">
+  Don&apos;t have an account? 
+  <button type="button" className="hover:underline ml-1">
+    Sign up
+  </button>
+</p>
+
+
           </form>
         </div>
       </div>
