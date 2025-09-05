@@ -126,11 +126,11 @@ export default function LoginPage() {
         </svg>
       </div>
 
-      {/* Left Side - Form (above the decorative background) */}
+      {/* Left Side - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center z-10">
         <div className="w-full max-w-md px-8">
           {/* Header */}
-          <div className="mb-12">
+          <div className="mb-8">
             <h1 className="font-[ABeeZee] font-normal text-[56px] leading-[100%] text-center text-gray-900 mb-6">
               Welcome back
             </h1>
@@ -163,8 +163,9 @@ export default function LoginPage() {
                 <input
                   {...register('email')}
                   type="email"
+                  name='email'
                   placeholder="Email"
-                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee]"
+      className="w-full h-[56px] pl-12 pr-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee] flex items-center"
                 />
               </div>
               {errors.email && (
@@ -188,8 +189,9 @@ export default function LoginPage() {
                 <input
                   {...register('password')}
                   type="password"
+                  name='password'
                   placeholder="Password"
-                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee]"
+      className="w-full h-[56px] pl-12 pr-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee] flex items-center"
                 />
               </div>
               {errors.password && (
@@ -201,7 +203,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={!isValid || isSubmitting}
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium py-3 rounded-lg hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+              className="w-full mt-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium py-3 rounded-lg hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center">
@@ -217,7 +219,7 @@ export default function LoginPage() {
             </button>
 
             {/* Sign up */}
-            <p className="mt-6 m-0 text-center text-[#62626B] font-normal text-[14px] leading-[155%] font-[ABeeZee]">
+            <p className="mt-4 m-0 text-center text-[#62626B] font-normal text-[14px] leading-[155%] font-[ABeeZee]">
               Don&apos;t have an account?
               <button type="button" className="hover:underline ml-1">
                 Sign up
