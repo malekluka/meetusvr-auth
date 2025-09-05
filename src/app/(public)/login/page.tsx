@@ -46,24 +46,21 @@ export default function LoginPage() {
       <div className="absolute inset-0 z-0 pointer-events-none">
 
         {/* NEW: top-right blurred circle (from your SVG) */}
-        <svg
-          className="absolute -right-28 -top-40 w-[1202px] h-[820px] opacity-70"
-          viewBox="0 0 1202 820"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden
-        >
-          <g filter="url(#filter_extra_top_right)">
-            <circle cx="733.5" cy="86.5" r="333.5" fill="#E477F6" />
-          </g>
-          <defs>
-            <filter id="filter_extra_top_right" x="0" y="-647" width="1467" height="1467" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_extra_top_right" />
-            </filter>
-          </defs>
-        </svg>
+        <div className='absolute right-0'>
+        <svg width="1202" height="820" viewBox="0 0 1202 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_0_20)">
+<circle cx="733.5" cy="86.5" r="333.5" fill="#E477F6"/>
+</g>
+<defs>
+<filter id="filter0_f_0_20" x="0" y="-647" width="1467" height="1467" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_0_20"/>
+</filter>
+</defs>
+</svg>
+</div>
+
 
         {/* top-left blurred circle */}
         <svg
