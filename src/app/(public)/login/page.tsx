@@ -150,16 +150,21 @@ export default function LoginPage() {
             {/* Email Input */}
             <div className="space-y-2">
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/email-icon.png" // Replace with your email icon path
+                      alt="Email icon"
+                      fill
+                      className="object-contain opacity-100"
+                    />
+                  </div>
                 </div>
                 <input
                   {...register('email')}
                   type="email"
                   placeholder="Email"
-                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee]"
                 />
               </div>
               {errors.email && (
@@ -171,15 +176,20 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
+                  <div className="relative w-6 h-6">
+                    <Image
+                      src="/lock-icon.png" // Replace with your lock icon path
+                      alt="Password icon"
+                      fill
+                      className="object-contain opacity-100"
+                    />
+                  </div>
                 </div>
                 <input
                   {...register('password')}
                   type="password"
                   placeholder="Password"
-                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee]"
                 />
               </div>
               {errors.password && (
@@ -220,32 +230,21 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side - Logo area (keeps content above background) */}
-      <div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
-        <div className="relative z-20 flex flex-col items-center">
-          {/* Logo */}
-          <div className="relative w-[670px] h-[400px]">
-            <Image
-              src="/meetusAR-logo.png"
-              alt="MeetusVR Logo"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
-
-          {/* Text (closer to logo) */}
-          <div className="relative w-64 h-20 -mt-2">
-            <Image
-              src="/meetusAR-text.png"
-              alt="MeetusVR Text"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
-        </div>
-      </div>
+      {/* Right Side - Logo area (keeps content above background) */}
+<div className="hidden lg:flex w-1/2 items-center justify-center p-8 relative z-10">
+    {/* 3D Twisted Ring Logo - Properly sized for 826x1124 aspect ratio */}
+      <Image
+        src="/meetusAR-logo.png"
+        alt="MeetusVR Logo"
+        fill
+        priority
+        className="object-contain"
+        quality={100}
+        sizes="330px"
+      />
+</div>
 
     </div>
   )
 }
+
