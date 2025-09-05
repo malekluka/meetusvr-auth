@@ -1,16 +1,22 @@
 'use client'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, LoginValues } from '@/lib/validators'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useAuth } from '@/store/auth'
 
 export default function LoginPage() {
   const router = useRouter()
-  const search = useSearchParams()
-  const redirectTo = search.get('from') || '/dashboard'
+   const [redirectTo, setRedirectTo] = useState('/dashboard')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      setRedirectTo(params.get('from') || '/dashboard')
+    }
+  }, [])
   const setUser = useAuth((s) => s.setUser)
   const [apiError, setApiError] = useState<string | null>(null)
 
