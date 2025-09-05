@@ -1,5 +1,5 @@
 'use client'
-import { useState , useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,7 +9,7 @@ import { useAuth } from '@/store/auth'
 
 export default function LoginPage() {
   const router = useRouter()
-   const [redirectTo, setRedirectTo] = useState('/dashboard')
+  const [redirectTo, setRedirectTo] = useState('/dashboard')
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -127,7 +127,7 @@ export default function LoginPage() {
       </div>
 
       {/* Left Side - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center z-10">
+      <div className="w-full lg:w-[45%] flex items-center justify-center z-10">
         <div className="w-full max-w-md px-8">
           {/* Header */}
           <div className="mb-8">
@@ -150,7 +150,7 @@ export default function LoginPage() {
             {/* Email Input */}
             <div className="space-y-2">
               <div className="relative">
-                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <div className="relative w-6 h-6">
                     <Image
                       src="/email-icon.png" // Replace with your email icon path
@@ -165,7 +165,7 @@ export default function LoginPage() {
                   type="email"
                   name='email'
                   placeholder="Email"
-      className="w-full h-[56px] pl-12 pr-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee] flex items-center"
+                  className="w-full h-[56px] pl-12 pr-4 bg-[#f8f9fb91] border border-white rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 font-[ABeeZee]"
                 />
               </div>
               {errors.email && (
@@ -191,7 +191,7 @@ export default function LoginPage() {
                   type="password"
                   name='password'
                   placeholder="Password"
-      className="w-full h-[56px] pl-12 pr-4 bg-white border border-gray-200 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 font-[ABeeZee] flex items-center"
+                  className="w-full h-[56px] pl-12 pr-4 bg-[#f8f9fb91] border border-white rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 font-[ABeeZee]"
                 />
               </div>
               {errors.password && (
@@ -233,18 +233,18 @@ export default function LoginPage() {
 
       {/* Right Side - Logo area (keeps content above background) */}
       {/* Right Side - Logo area (keeps content above background) */}
-<div className="hidden lg:flex w-1/2 items-center justify-center p-8 relative z-10">
-    {/* 3D Twisted Ring Logo - Properly sized for 826x1124 aspect ratio */}
-      <Image
-        src="/meetusAR-logo.png"
-        alt="MeetusVR Logo"
-        fill
-        priority
-        className="object-contain"
-        quality={100}
-        sizes="330px"
-      />
-</div>
+      <div className="hidden lg:flex w-[45%] items-center justify-center p-8 relative z-10">
+        {/* 3D Twisted Ring Logo - Properly sized for 826x1124 aspect ratio */}
+        <Image
+          src="/meetusAR-logo.png"
+          alt="MeetusVR Logo"
+          fill
+          priority
+          className="object-contain"
+          quality={100}
+          sizes="330px"
+        />
+      </div>
 
     </div>
   )
