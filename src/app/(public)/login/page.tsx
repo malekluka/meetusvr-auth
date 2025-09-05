@@ -122,16 +122,16 @@ export default function LoginPage() {
 
       {/* Left Side - Form (above the decorative background) */}
       <div className="w-full lg:w-1/2 flex items-center justify-center z-10">
-  <div className="w-full max-w-md px-8">
-    {/* Header */}
-    <div className="mb-12">
-      <h1 className="font-[ABeeZee] font-normal text-[56px] leading-[100%] text-center text-gray-900 mb-6">
-        Welcome back
-      </h1>
-      <p className="font-[ABeeZee] font-normal text-[18px] leading-[155%] text-center text-[#62626B]">
-        Step into our shopping metaverse for an unforgettable shopping experience
-      </p>
-    </div>
+        <div className="w-full max-w-md px-8">
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="font-[ABeeZee] font-normal text-[56px] leading-[100%] text-center text-gray-900 mb-6">
+              Welcome back
+            </h1>
+            <p className="font-[ABeeZee] font-normal text-[18px] leading-[155%] text-center text-[#62626B]">
+              Step into our shopping metaverse for an unforgettable shopping experience
+            </p>
+          </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -202,11 +202,11 @@ export default function LoginPage() {
 
             {/* Sign up */}
             <p className="mt-6 m-0 text-center text-[#62626B] font-normal text-[14px] leading-[155%] font-[ABeeZee]">
-  Don&apos;t have an account? 
-  <button type="button" className="hover:underline ml-1">
-    Sign up
-  </button>
-</p>
+              Don&apos;t have an account?
+              <button type="button" className="hover:underline ml-1">
+                Sign up
+              </button>
+            </p>
 
 
           </form>
@@ -214,31 +214,31 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side - Logo area (keeps content above background) */}
-<div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
-  <div className="relative z-20 flex flex-col items-center">
-    {/* Logo */}
-    <div className="relative w-[670px] h-[400px]">
-      <Image
-        src="/meetusAR-logo.png"
-        alt="MeetusVR Logo"
-        fill
-        priority
-        className="object-contain"
-      />
-    </div>
+      <div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
+        <div className="relative z-20 flex flex-col items-center">
+          {/* Logo */}
+          <div className="relative w-[670px] h-[400px]">
+            <Image
+              src="/meetusAR-logo.png"
+              alt="MeetusVR Logo"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
 
-    {/* Text (closer to logo) */}
-    <div className="relative w-64 h-20 -mt-2">
-      <Image
-        src="/meetusAR-text.png"
-        alt="MeetusVR Text"
-        fill
-        priority
-        className="object-contain"
-      />
-    </div>
-  </div>
-</div>
+          {/* Text (closer to logo) */}
+          <div className="relative w-64 h-20 -mt-2">
+            <Image
+              src="/meetusAR-text.png"
+              alt="MeetusVR Text"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+        </div>
+      </div>
 
     </div>
   )
