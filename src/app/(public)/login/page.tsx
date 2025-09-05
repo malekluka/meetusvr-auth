@@ -34,11 +34,92 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">      
+    <div className="min-h-screen flex bg-[#E9ECF2] relative overflow-hidden">
 
-        {/* Soft gradient blobs behind the spiral */}
-        <div className="absolute -right-40 -top-40 w-[520px] h-[520px] bg-gradient-to-tr from-pink-400 via-purple-500 to-blue-400 opacity-40 rounded-full blur-3xl transform rotate-12" />
-    
+      {/* Decorative blurred circles (Figma-like) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+
+        {/* NEW: top-right blurred circle (from your SVG) */}
+        <svg
+          className="absolute -right-28 -top-40 w-[1202px] h-[820px] opacity-70"
+          viewBox="0 0 1202 820"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
+          <g filter="url(#filter_extra_top_right)">
+            <circle cx="733.5" cy="86.5" r="333.5" fill="#E477F6" />
+          </g>
+          <defs>
+            <filter id="filter_extra_top_right" x="0" y="-647" width="1467" height="1467" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_extra_top_right" />
+            </filter>
+          </defs>
+        </svg>
+
+        {/* top-left blurred circle */}
+        <svg
+          className="absolute -left-64 -top-64 w-[1440px] h-[1024px] opacity-60"
+          viewBox="0 0 1440 1024"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
+          <g opacity="0.6" filter="url(#filter_top_left)">
+            <circle cx="441.5" cy="31.5" r="403.5" fill="#9E77F6" />
+          </g>
+          <defs>
+            <filter id="filter_top_left" x="-762" y="-1172" width="2407" height="2407" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="400" result="effect1_foregroundBlur_top_left" />
+            </filter>
+          </defs>
+        </svg>
+
+        {/* bottom-left blurred circle */}
+        <svg
+          className="absolute -left-72 -bottom-64 w-[1440px] h-[1024px] opacity-60"
+          viewBox="0 0 1440 1024"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
+          <g opacity="0.6" filter="url(#filter_bottom_left)">
+            <circle cx="289.5" cy="1052.5" r="406.5" fill="#B0D2E5" />
+          </g>
+          <defs>
+            <filter id="filter_bottom_left" x="-917" y="-154" width="2413" height="2413" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="400" result="effect1_foregroundBlur_bottom_left" />
+            </filter>
+          </defs>
+        </svg>
+
+        {/* bottom-right blurred circle */}
+        <svg
+          className="absolute right-[-80px] bottom-[-80px] w-[757px] h-[757px] opacity-90"
+          viewBox="0 0 757 757"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
+          <g filter="url(#filter_bottom_right)">
+            <circle cx="733.5" cy="733.5" r="333.5" fill="#9E77F6" />
+          </g>
+          <defs>
+            <filter id="filter_bottom_right" x="0" y="0" width="1467" height="1467" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_bottom_right" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
       {/* Left Side - Form (above the decorative background) */}
       <div className="w-full lg:w-1/2 flex items-center justify-center z-10">
         <div className="w-full max-w-md px-8">
@@ -135,7 +216,7 @@ export default function LoginPage() {
 <div className="hidden lg:flex w-1/2 items-center justify-center p-12 relative z-10">
   <div className="relative z-20 flex flex-col items-center">
     {/* Logo */}
-    <div className="relative w-[660px] h-[400px]">
+    <div className="relative w-[670px] h-[400px]">
       <Image
         src="/meetusAR-logo.png"
         alt="MeetusVR Logo"
